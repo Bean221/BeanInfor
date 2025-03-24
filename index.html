@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lê Minh Tuấn</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skill</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="music-player">
+        <button id="music-toggle"><i class="fas fa-play"></i></button>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+    </div>
+    <main>
+        <section id="about" class="animate-section">
+            <h1>Một chút về tớ ^^</h1>
+            <div class="about-content">
+                <img src="profile.jpg" alt="Ảnh đại diện" class="profile-image">
+                <p>
+                    Mình tên là Lê Minh Tuấn, sinh ngày 22/01/2003.  <br>
+                    Quy Nhơn, Bình Định là thành phố tớ sinh ra và đang sống.  <br>
+                    Hiện là sinh viên IT năm 4, ĐH Quy Nhơn. <br>
+                    Thích chơi đá banh, bóng chuyền và mọi môn thể thao. <br>
+                    Cảm ơn bạn ghé thăm, yêu lắm! ^^ <br>
+                  </p>
+            </div>
+        </section>
+        <section id="education" class="animate-section">
+            <h2>Học vấn của tớ</h2>
+            <ul>
+                <li>THPT Trưng Vương - 2021</li>
+                <li>Đại học Quy Nhơn - CNTT - 2026 </li>
+            </ul>
+        </section>
+        <section id="skills" class="animate-section">
+            <h2>Kỹ năng tớ có</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <span>Giao Tiếp/Kỹ Năng Sống.</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-percent="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Dev FullStack Web/APP.</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-percent="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Ngoại Ngữ/Tiếng Anh</span>
+                    <div class="progress-bar">
+                        <div class="progress" data-percent="80"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="timeline" class="animate-section">
+            <h2>Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-year="2026" data-desc="Tốt nghiệp đại học, chuyên ngành CNTT, quá trình học đại học của mình không được như ý muốn, vì một số lí 
+                do nên mình đã khá mơ hồ về quá trình học đại học của mình, nhưng mình luôn thể hiện tốt nhất vì tớ tin vào khả năng của tớ  ^^">
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-content">Tốt nghiệp đại học</div>
+                </div>
+                <div class="timeline-item" data-year="2024" data-desc="Tớ thực tập 3 tháng tại NCC Soft Quy Nhơn, môi trường rất chuyên nghiệp và năng động trẻ trung, mình rất thích làm việc ở đây,
+                có cơ hội thì đây vẫn là lựa chọn của mình, anh chị rất vui và support rất tốt. Hi">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">Bắt đầu thực tập</div>
+                </div>
+                <div class="timeline-item" data-year="2024" data-desc="Mình đã ôn luyện chứng chỉ này nhằm mục đích có cơ hội đi du học và đi nước ngoài sinh sống, 
+                dù điểm không được cao nhưng mình đã cố gắng và nổ lực trong thời gian ấy. Mình vẫn tiếp tục ôn luyện để lấy chứng chỉ cao hơn ^^">
+                    <div class="timeline-date">2024 </div>
+                    <div class="timeline-content">PTE 29</div>
+                </div>
+                <div class="timeline-item" data-year="2021" data-desc="Tốt nghiệp thôi mà tớ có rất nhiều kỹ niệm về nó, dù tớ không được chụp kĩ yếu nhưng
+                nơi đây tớ rất vui vì đã là một trong đại gia đình của lớp học năm ấy <3.">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">Tốt nghiệp THPT</div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="animate-section">
+            <h2>Liên hệ</h2>
+            <ul>
+                <li><a href="https://facebook.com/mtuan221" target="_blank" class="contact-link" data-tooltip="Facebook"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com/mtuan221" target="_blank" class="contact-link" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/bean221" target="_blank" class="contact-link" data-tooltip="GitHub"><i class="fab fa-github"></i></a></li>
+                <li><a href="tel:+84905961293" class="contact-link" data-tooltip="Call"><i class="fas fa-phone"></i></a></li>
+                <li><a href="mailto:hoctot221@gmail.com" class="contact-link" data-tooltip="Email"><i class="far fa-envelope"></i></a></li>
+                <li><a href="https://www.youtube.com/@lournbean22" target="_blank" class="contact-link" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 From Lê Minh Tuấn --- Contact Zalo SĐT 0905961293
+        </p>
+    </footer>
+    <div id="timeline-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="timeline-modal-year"></h2>
+            <p id="timeline-modal-desc"></p>
+            <button class="close-button">Đóng</button>
+        </div>
+    </div>
+    <audio id="background-music" src="music.mp3" loop></audio>
+</body>
+</html>
