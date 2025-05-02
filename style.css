@@ -195,6 +195,7 @@ main {
     vertical-align: middle;
     background: var(--gradient-accent);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .section-title::after {
@@ -271,6 +272,7 @@ main {
     margin-bottom: 0.5rem;
     background: var(--gradient-accent);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -389,6 +391,7 @@ main {
     font-size: 1.6rem;
     background: linear-gradient(145deg, var(--accent-color), var(--accent-hover));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -576,47 +579,105 @@ main {
     font-size: 0.95rem;
 }
 
-/* --- Contact Section --- */
-.contact-list {
-    list-style: none; padding: 0; display: flex; justify-content: center;
-    flex-wrap: wrap; gap: 1.8rem; margin-top: 1rem;
+/* --- Contact Info Section --- */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding: 0 1rem;
 }
-.contact-link {
-    display: flex; align-items: center; justify-content: center;
-    width: 60px; height: 60px;
-    background-color: var(--secondary-bg);
-    border-radius: 50%;
+.contact-card {
+    background: linear-gradient(145deg, var(--secondary-bg), var(--card-bg));
+    padding: 2rem 1.2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(.4,2,.6,1);
+    border: 2px solid transparent;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.10);
+    position: relative;
+}
+.contact-card:hover {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.18);
+    transform: translateY(-6px) scale(1.04);
+    background: linear-gradient(145deg, var(--accent-color), var(--card-bg));
+}
+.contact-card i {
+    font-size: 2.3rem;
+    color: var(--accent-color);
+    margin-bottom: 0.7rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.2s, color 0.2s;
+}
+.contact-card h3 {
+    color: var(--heading-color);
+    font-size: 1.18rem;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.contact-card p {
     color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.6rem;
-    transition: transform var(--transition-speed) ease, background-color var(--transition-speed);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
 }
-.contact-link:hover {
-    transform: scale(1.1);
-    background-color: var(--accent-color);
-    color: #ffffff;
+.contact-card p i {
+    font-size: 1.15rem;
+    color: var(--accent-color);
+    margin-right: 0.3rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.contact-link::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    background-color: var(--accent-color);
-    color: var(--primary-bg);
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
+
+.contact-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: 1.25rem;
+    color: var(--accent-color);
     font-weight: 600;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+    margin-bottom: 1.2rem;
 }
-.contact-link:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+.contact-intro i {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    animation: bounceHand 1.2s infinite alternate;
+}
+@keyframes bounceHand {
+    0% { transform: translateY(0) rotate(-10deg); }
+    100% { transform: translateY(-7px) rotate(10deg); }
+}
+@media (max-width: 900px) {
+    .contact-info {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-card {
+        padding: 1.5rem 0.7rem;
+    }
 }
 
 /* --- Footer --- */
@@ -689,6 +750,7 @@ footer .pulse { color: var(--accent-color); animation: pulse-heart 1.5s infinite
     transform: scale(1.2) rotate(10deg);
     background: var(--gradient-accent);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -761,4 +823,57 @@ footer .pulse { color: var(--accent-color); animation: pulse-heart 1.5s infinite
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    margin-top: 1rem;
+}
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-bg);
+    border-radius: 50%;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed), color var(--transition-speed);
+    position: relative;
+}
+.contact-link:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+.contact-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+    pointer-events: none;
+    z-index: 10;
+}
+.contact-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
