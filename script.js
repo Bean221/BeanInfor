@@ -1,37 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Initialize Particles.js (Có thể đổi màu hạt ở đây) ---
+    // --- Particles.js ---
     particlesJS('particles-js', {
         particles: {
-            number: { value: 50, density: { enable: true, value_area: 800 } }, // Giảm số lượng
-            color: { value: '#475569' }, // Màu hạt (Slate-600) - hợp theme mới
-            shape: { type: 'circle' },
-            opacity: { value: 0.3, random: true, anim: { enable: false } }, // Giảm opacity, tắt anim
-            size: { value: 2, random: true }, // Kích thước nhỏ hơn
-            line_linked: { enable: true, distance: 150, color: '#334155', opacity: 0.15, width: 1 }, // Màu đường nối (Slate-700)
-            move: { enable: true, speed: 1, direction: 'none', random: true, straight: false, out_mode: 'out' } // Chậm hơn
+            number: {
+                value: 100,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: ['#8B5CF6', '#7C3AED', '#6D28D9', '#5B21B6']
+            },
+            shape: {
+                type: 'circle',
+                stroke: {
+                    width: 0,
+                    color: '#000000'
+                }
+            },
+            opacity: {
+                value: 0.6,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 2,
+                    size_min: 0.1,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#8B5CF6',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+                attract: {
+                    enable: true,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
         },
         interactivity: {
             detect_on: 'canvas',
-            events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: false }, resize: true }, // Tắt push on click
-            modes: { grab: { distance: 140, line_linked: { opacity: 0.3 } } }
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: true,
+                    mode: 'push'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 0.8
+                    }
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
         },
         retina_detect: true
     });
 
-    // --- Initialize AOS (Cấu hình chung) ---
+    // --- AOS ---
     AOS.init({
-        duration: 700,       // Thời gian animation ngắn hơn
-        easing: 'ease-out-cubic', // Easing mượt hơn
-        once: true,          // Chỉ chạy 1 lần
-        offset: 80,          // Kích hoạt sớm hơn chút
-        disable: 'mobile'    // Có thể tắt AOS trên mobile nếu muốn
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 80
     });
 
-    // --- Smooth Scroll & Scroll Spy (Giữ nguyên logic, kiểm tra lại offset) ---
+    // --- Scroll Spy ---
     const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('.content-section'); // Đảm bảo selector đúng
+    const sections = document.querySelectorAll('.content-section');
     const header = document.getElementById('main-header');
-    const headerHeight = header.offsetHeight; // Lấy chiều cao header ban đầu
     let lastScrollTop = 0;
 
     navLinks.forEach(link => {
@@ -39,26 +108,17 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            if (!targetSection) return; // Bỏ qua nếu không tìm thấy section
+            const currentHeaderHeight = header.offsetHeight;
+            const targetPosition = targetSection.offsetTop - currentHeaderHeight - 20;
 
-            // Tính toán vị trí cuộn chính xác hơn
-            const currentHeaderHeight = document.getElementById('main-header').offsetHeight;
-            const targetPosition = targetSection.offsetTop - currentHeaderHeight - 20; // Thêm offset nhỏ
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-
-            // Optional: Đóng menu nếu là mobile (cần thêm logic nếu có menu burger)
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         });
     });
 
     function handleScroll() {
         let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const currentHeaderHeight = header.offsetHeight; // Lấy chiều cao hiện tại
+        const currentHeaderHeight = header.offsetHeight;
 
-        // Header hide/show (Logic giữ nguyên)
         if (currentScrollTop > lastScrollTop && currentScrollTop > currentHeaderHeight) {
             header.classList.add('hidden');
         } else {
@@ -66,28 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 
-        // Scroll Spy (Cập nhật offset)
         let currentSectionId = '';
-        const scrollSpyOffset = currentHeaderHeight + 60; // Offset lớn hơn để active sớm hơn
+        const scrollSpyOffset = currentHeaderHeight + 60;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - scrollSpyOffset;
             const sectionBottom = sectionTop + section.offsetHeight;
-
-            // Logic active section chính xác hơn (kể cả section cuối cùng)
-             if (currentScrollTop >= sectionTop && currentScrollTop < sectionBottom) {
-                 currentSectionId = section.getAttribute('id');
-             }
+            if (currentScrollTop >= sectionTop && currentScrollTop < sectionBottom) {
+                currentSectionId = section.getAttribute('id');
+            }
         });
 
-         // Nếu cuộn xuống cuối trang mà section cuối chưa active hết chiều cao
-         if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 50) { // Gần cuối trang
-            const lastSection = sections[sections.length - 1];
-            if (lastSection) {
-                currentSectionId = lastSection.getAttribute('id');
-            }
+        if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 50) {
+            currentSectionId = sections[sections.length - 1].getAttribute('id');
         }
-
 
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -98,33 +150,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Gọi lần đầu để set active link ban đầu
+    handleScroll();
 
-    // --- Skill Bar Animation (Đã loại bỏ thanh progress nên không cần nữa) ---
-    // const skillSection = document.getElementById('skills');
-    // const progressBars = document.querySelectorAll('.progress'); // Selector này không còn
-    // if (skillSection) { // Kiểm tra skillSection tồn tại
-    //     const skillObserver = new IntersectionObserver(entries => {
-    //         if (entries[0].isIntersecting) {
-    //             // Logic animation nếu dùng lại progress bar
-    //             console.log("Skills section is visible - trigger animations if needed");
-    //             skillObserver.unobserve(skillSection);
-    //         }
-    //     }, { threshold: 0.2 });
-    //     skillObserver.observe(skillSection);
-    // }
-
-    // --- Music Player (Giữ nguyên logic) ---
+    // --- Music Player ---
     const audio = document.getElementById('background-music');
     const musicToggle = document.getElementById('music-toggle');
     const volumeControl = document.getElementById('volume-control');
 
-    if (audio && musicToggle && volumeControl) { // Kiểm tra các element tồn tại
+    if (audio && musicToggle && volumeControl) {
         audio.volume = volumeControl.value;
-
         musicToggle.addEventListener('click', () => {
             if (audio.paused) {
-                audio.play().catch(e => console.error("Audio play failed:", e)); // Thêm catch lỗi
+                audio.play().catch(e => console.error("Audio play failed:", e));
                 musicToggle.querySelector('i').classList.replace('fa-play', 'fa-pause');
             } else {
                 audio.pause();
@@ -132,59 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         volumeControl.addEventListener('input', () => audio.volume = volumeControl.value);
-    } else {
-        // Ẩn music player nếu thiếu element
-        const musicPlayerElement = document.getElementById('music-player');
-        if(musicPlayerElement) musicPlayerElement.style.display = 'none';
     }
 
-    // --- Timeline Modal (Giữ nguyên logic) ---
-    const modal = document.getElementById('timeline-modal');
-    const modalYear = document.getElementById('timeline-modal-year');
-    const modalDesc = document.getElementById('timeline-modal-desc');
-    const closeButton = modal ? modal.querySelector('.close-button') : null;
-    const timelineItems = document.querySelectorAll('.timeline-item'); // Lấy item thay vì content
-
-    if (modal && modalYear && modalDesc && closeButton) { // Check if modal elements exist
-        timelineItems.forEach(item => {
-            const content = item.querySelector('.timeline-content');
-            const year = item.getAttribute('data-year');
-            const desc = item.getAttribute('data-desc');
-
-            if (content && year && desc) {
-                content.addEventListener('click', () => {
-                    modalYear.textContent = year;
-                    modalDesc.textContent = desc;
-                    modal.classList.add('show');
-                    document.body.style.overflow = 'hidden'; // Prevent background scroll
-                });
-            }
-        });
-
-        const closeModal = () => {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto'; // Restore scroll
-        };
-
-        closeButton.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) { // Click outside modal content
-                closeModal();
-            }
-        });
-        // Close modal with Escape key
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                closeModal();
-            }
-        });
-
-    }
-
-    // --- Footer Year (Giữ nguyên) ---
-    const currentYearElement = document.getElementById('current-year');
-    if(currentYearElement) {
-      currentYearElement.textContent = new Date().getFullYear();
-    }
-
+    // --- Footer Year ---
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 });
