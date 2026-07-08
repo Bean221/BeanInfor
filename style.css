@@ -1,11 +1,10 @@
-/* --- Global Styles & Variables --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
     --primary-bg: #0f172a;
     --secondary-bg: #1e293b;
     --card-bg: #1e293b;
-    --accent-color: #8B5CF6; /* Tím hiện đại */
+    --accent-color: #8B5CF6;
     --accent-hover: #7C3AED;
     --text-color: #cbd5e1;
     --heading-color: #f1f5f9;
@@ -50,7 +49,6 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover { background-color: var(--accent-hover); }
 
-/* --- Particles Background --- */
 #particles-js {
     position: fixed;
     top: 0;
@@ -61,7 +59,6 @@ body {
     background: linear-gradient(135deg, var(--primary-bg), #1a1f35);
 }
 
-/* --- Header & Navigation --- */
 #main-header {
     background-color: rgba(15, 23, 42, 0.95);
     padding: 1rem 2rem;
@@ -130,7 +127,6 @@ nav a:hover::after, nav a.active::after {
     width: 80%;
 }
 
-/* --- Music Player --- */
 #music-player {
     position: fixed;
     bottom: 20px; right: 20px;
@@ -161,7 +157,6 @@ nav a:hover::after, nav a.active::after {
     background: var(--accent-color); border-radius: 50%; cursor: pointer;
 }
 
-/* --- Main Content & Sections --- */
 main {
     padding: 7rem 2rem 2rem;
     max-width: 1200px;
@@ -210,7 +205,6 @@ main {
     border-radius: 2px;
 }
 
-/* --- About Section --- */
 .about-container {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -331,7 +325,6 @@ main {
     transform: translateY(-3px);
 }
 
-/* --- Skills Section --- */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -457,7 +450,6 @@ main {
     transform: scale(1.1) rotate(5deg);
 }
 
-/* --- Education Section --- */
 .education-list {
     list-style: none; padding: 0; margin: 0 auto; max-width: 700px;
 }
@@ -481,7 +473,6 @@ main {
 .education-list strong { font-weight: 600; color: var(--heading-color); font-size: 1.05rem; }
 .education-list span { font-weight: 400; color: var(--subtle-text); font-size: 0.9rem; }
 
-/* --- Timeline Section --- */
 .timeline {
     position: relative;
     max-width: 900px;
@@ -579,7 +570,6 @@ main {
     font-size: 0.95rem;
 }
 
-/* --- Contact Info Section --- */
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -680,7 +670,6 @@ main {
     }
 }
 
-/* --- Footer --- */
 footer {
     background-color: var(--secondary-bg);
     color: var(--subtle-text);
@@ -694,7 +683,6 @@ footer {
 footer .pulse { color: var(--accent-color); animation: pulse-heart 1.5s infinite ease-in-out; }
 @keyframes pulse-heart { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
 
-/* --- Interests Section --- */
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -770,7 +758,6 @@ footer .pulse { color: var(--accent-color); animation: pulse-heart 1.5s infinite
     z-index: 1;
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 768px) {
     main { padding: 6rem 1rem 1rem; }
     .content-section { padding: 1.8rem; margin-bottom: 2rem; }
