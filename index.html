@@ -1,344 +1,625 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lê Minh Tuấn</title>
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      defer
+    ></script>
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <audio id="background-music" src="music.mp3" loop autoplay></audio>
     <div id="particles-js"></div>
     <header id="main-header">
-        <nav>
-            <ul>
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
-                <li><a href="#interests"><i class="fas fa-heart"></i> Interests</a></li>
-                <li><a href="#timeline"><i class="fas fa-history"></i> Timeline</a></li>
-                <li><a href="#contact"><i class="fas fa-paper-plane"></i> Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a>
+          </li>
+          <li>
+            <a href="#interests"><i class="fas fa-heart"></i> Interests</a>
+          </li>
+          <li>
+            <a href="#timeline"><i class="fas fa-history"></i> Timeline</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-paper-plane"></i> Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <div id="music-player">
-        <button id="music-toggle" aria-label="Toggle Music"><i class="fas fa-play"></i></button>
-        <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.5" aria-label="Volume Control">
+      <button id="music-toggle" aria-label="Toggle Music">
+        <i class="fas fa-play"></i>
+      </button>
+      <input
+        type="range"
+        id="volume-control"
+        min="0"
+        max="1"
+        step="0.05"
+        value="0.5"
+        aria-label="Volume Control"
+      />
     </div>
 
     <main>
-        <section id="about" class="content-section">
-            <h2 class="section-title" data-aos="fade-right"><i class="fas fa-user"></i> Giới Thiệu</h2>
-            <div class="about-container" data-aos="fade-up">
-                <div class="profile-image-wrapper" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="anhtuan.jpg" alt="Ảnh đại diện" class="profile-image">
-                </div>
-                <div class="about-text" data-aos="fade-left" data-aos-delay="400">
-                    <h1 class="about-name">Lê Minh Tuấn</h1>
-                    <p class="about-title"><i class="fas fa-code"></i> Developer Engineer</p>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Mình là một chàng trai đến từ thành phố biển Quy Nhơn xinh đẹp, tốt nghiệp ngành CNTT chuyên ngành công nghệ phần mềm tại Đại học Quy Nhơn.
-                    </p>
-                    <p>
-                        <i class="fas fa-laptop-code"></i>  Với kinh nghiệm phát triển web, mình xây dựng các ứng dụng hiện đại, hiệu quả và thân thiện với người dùng bằng React, Next.js, Blazor, Node.js và .NET.
-                    </p>
-                    <p>
-                        <i class="fas fa-rocket"></i> Luôn tìm kiếm cơ hội để học hỏi và phát triển bản thân, mình mong muốn được đóng góp vào những dự án thú vị và thách thức.
-                    </p>
-                    <div class="about-cta">
-                        <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="600">
-                            <i class="fas fa-paper-plane"></i> Liên Hệ Ngay
-                        </a>
-                    </div>
-                </div>
+      <section id="about" class="content-section">
+        <h2 class="section-title" data-aos="fade-right">
+          <i class="fas fa-user"></i> Giới Thiệu
+        </h2>
+        <div class="about-container" data-aos="fade-up">
+          <div
+            class="profile-image-wrapper"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <img src="anhtuan.jpg" alt="Ảnh đại diện" class="profile-image" />
+          </div>
+          <div class="about-text" data-aos="fade-left" data-aos-delay="400">
+            <h1 class="about-name">Lê Minh Tuấn</h1>
+            <p class="about-title">
+              <i class="fas fa-code"></i> Information Technology
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Mình là một lập trình viên
+              đến từ thành phố biển Quy Nhơn, tốt nghiệp ngành Công nghệ Thông
+              tin tại Đại học Quy Nhơn.
+            </p>
+            <p>
+              <i class="fas fa-laptop-code"></i> Mình yêu thích công nghệ và
+              phát triển các sản phẩm web, luôn đề cao sự nghiêm túc, trách
+              nhiệm và tinh thần học hỏi trong công việc.
+            </p>
+            <p>
+              <i class="fas fa-rocket"></i> Mình luôn chủ động trau dồi kiến
+              thức, hoàn thiện bản thân và mong muốn được đóng góp vào những dự
+              án thực tế, có giá trị.
+            </p>
+            <div class="about-cta">
+              <a
+                href="#contact"
+                class="cta-button"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <i class="fas fa-paper-plane"></i> Liên Hệ Ngay
+              </a>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="interests" class="content-section">
-            <h2 class="section-title" data-aos="fade-right"><i class="fas fa-heart"></i> Sở Thích</h2>
-            <div class="interests-grid">
-                <div class="interest-card" data-aos="zoom-in">
-                    <i class="fas fa-futbol"></i>
-                    <h3>Bóng Đá</h3>
-                    <p>Niềm đam mê với môn thể thao vua, thường xuyên tham gia các giải đấu phong trào</p>
-                </div>
-                <div class="interest-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-volleyball-ball"></i>
-                    <h3>Bóng Chuyền</h3>
-                    <p>Rèn luyện tinh thần đồng đội và phản xạ nhanh nhạy qua môn thể thao yêu thích</p>
-                </div>
-                <div class="interest-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-table-tennis"></i>
-                    <h3>Cầu Lông</h3>
-                    <p>Tập luyện cầu lông để nâng cao sức khỏe và khả năng tập trung</p>
-                </div>
-                <div class="interest-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-book"></i>
-                    <h3>Học Tập</h3>
-                    <p>Chăm chỉ học hỏi công nghệ mới và phát triển kỹ năng chuyên môn</p>
-                </div>
-                <div class="interest-card" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-music"></i>
-                    <h3>Âm Nhạc</h3>
-                    <p>Thưởng thức âm nhạc để thư giãn và tìm cảm hứng sáng tạo</p>
-                </div>
-                <div class="interest-card" data-aos="zoom-in" data-aos-delay="500">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Game</h3>
-                    <p>Chơi game để giải trí và phát triển tư duy chiến thuật</p>
-                </div>
+      <section id="interests" class="content-section">
+        <h2 class="section-title" data-aos="fade-right">
+          <i class="fas fa-heart"></i> Sở Thích
+        </h2>
+        <div class="interests-grid">
+          <div class="interest-card" data-aos="zoom-in">
+            <i class="fas fa-futbol"></i>
+            <h3>Bóng Đá</h3>
+            <p>
+              Niềm đam mê với môn thể thao vua, thường xuyên tham gia các giải
+              đấu phong trào
+            </p>
+          </div>
+          <div class="interest-card" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-volleyball-ball"></i>
+            <h3>Bóng Chuyền</h3>
+            <p>
+              Rèn luyện tinh thần đồng đội và phản xạ nhanh nhạy qua môn thể
+              thao yêu thích
+            </p>
+          </div>
+          <div class="interest-card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-table-tennis"></i>
+            <h3>Cầu Lông</h3>
+            <p>Tập luyện cầu lông để nâng cao sức khỏe và khả năng tập trung</p>
+          </div>
+          <div class="interest-card" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-book"></i>
+            <h3>Học Tập</h3>
+            <p>
+              Chăm chỉ học hỏi công nghệ mới và phát triển kỹ năng chuyên môn
+            </p>
+          </div>
+          <div class="interest-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-music"></i>
+            <h3>Âm Nhạc</h3>
+            <p>Thưởng thức âm nhạc để thư giãn và tìm cảm hứng sáng tạo</p>
+          </div>
+          <div class="interest-card" data-aos="zoom-in" data-aos-delay="500">
+            <i class="fas fa-gamepad"></i>
+            <h3>Game</h3>
+            <p>Chơi game để giải trí và phát triển tư duy chiến thuật</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="content-section">
+        <h2 class="section-title" data-aos="fade-up">
+          <i class="fas fa-laptop-code"></i> Technical Skills
+        </h2>
+        <div class="skills-grid">
+          <div class="skill-category" data-aos="fade-up">
+            <h3><i class="fas fa-code"></i> Frontend Development</h3>
+            <div class="skills-list">
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+              >
+                <i class="devicon-html5-plain colored"></i> HTML5
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="150"
+              >
+                <i class="devicon-css3-plain colored"></i> CSS3
+              </span>
+
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="300"
+              >
+                <i class="devicon-react-original colored"></i> React
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+              >
+                <i class="devicon-nextjs-plain"></i> Next.js
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="350"
+              >
+                <i class="devicon-tailwindcss-plain colored"></i> TailwindCSS
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="400"
+              >
+                <i class="devicon-bootstrap-plain colored"></i> Bootstrap
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="500"
+              >
+                <i class="devicon-dot-net-plain colored"></i> Razor Pages
+              </span>
             </div>
-        </section>
+          </div>
 
-        <section id="skills" class="content-section">
-            <h2 class="section-title" data-aos="fade-up"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up">
-                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="100">
-                            <i class="devicon-html5-plain colored"></i> HTML5
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="150">
-                            <i class="devicon-css3-plain colored"></i> CSS3
-                        </span>
-                    
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="300">
-                            <i class="devicon-react-original colored"></i> React
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="200">
-                            <i class="devicon-nextjs-plain"></i> Next.js
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="350">
-                            <i class="devicon-tailwindcss-plain colored"></i> TailwindCSS
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="400">
-                            <i class="devicon-bootstrap-plain colored"></i> Bootstrap
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="500">
-                            <i class="devicon-dot-net-plain colored"></i> Razor Pages
-                        </span>
-
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3><i class="fas fa-server"></i> Backend Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="100">
-                            <i class="devicon-nodejs-plain colored"></i> Node.js
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="150">
-                            <i class="devicon-express-original"></i> Express.js
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="200">
-                            <i class="devicon-javascript-plain colored"></i> JavaScript
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="devicon-typescript-plain colored"></i> TypeScript
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="devicon-nestjs-plain colored"></i> NestJS
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="350">
-                            <i class="devicon-csharp-plain colored"></i> .NET / C#
-                        </span>
-                    
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="100">
-                            <i class="devicon-react-original colored"></i> React Native
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="150">
-                            <i class="devicon-flutter-plain colored"></i> Flutter
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="200">
-                            <i class="devicon-android-plain colored"></i> Android
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="devicon-apple-original"></i> iOS
-                        </span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <h3><i class="fas fa-database"></i> Databases</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="100">
-                            <i class="devicon-mysql-plain colored"></i> MySQL
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="150">
-                            <i class="devicon-postgresql-plain colored"></i> PostgreSQL
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="200">
-                            <i class="devicon-mongodb-plain colored"></i> MongoDB
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="devicon-redis-plain colored"></i> Redis
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="devicon-microsoftsqlserver-plain colored"></i> SQL Server
-                        </span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="100">
-                            <i class="devicon-git-plain colored"></i> Git
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="150">
-                            <i class="devicon-github-original"></i> GitHub
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="200">
-                            <i class="devicon-docker-plain colored"></i> Docker
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="devicon-visualstudio-plain colored"></i> VS Code
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="300">
-                            <i class="devicon-jira-plain colored"></i> Jira
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="350">
-                            <i class="fas fa-users"></i> Huly
-                        </span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
-                    <h3><i class="fas fa-users"></i> Kỹ Năng Mềm</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="100">
-                            <i class="fas fa-comments"></i> Giao Tiếp
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="150">
-                            <i class="fas fa-users-cog"></i> Làm Việc Nhóm
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="200">
-                            <i class="fas fa-tasks"></i> Quản Lý Thời Gian
-                        </span>
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="250">
-                            <i class="fas fa-lightbulb"></i> Giải Quyết Vấn Đề
-                        </span>                   
-                        <span class="skill-tag" data-aos="zoom-in-up" data-aos-delay="350">
-                            <i class="fas fa-book-reader"></i> Tự Học
-                        </span>
-                    </div>
-                </div>
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-server"></i> Backend Development</h3>
+            <div class="skills-list">
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+              >
+                <i class="devicon-nodejs-plain colored"></i> Node.js
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="150"
+              >
+                <i class="devicon-express-original"></i> Express.js
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+              >
+                <i class="devicon-javascript-plain colored"></i> JavaScript
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="devicon-typescript-plain colored"></i> TypeScript
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="devicon-nestjs-plain colored"></i> NestJS
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="350"
+              >
+                <i class="devicon-csharp-plain colored"></i> .NET / C#
+              </span>
             </div>
-        </section>
+          </div>
 
-        <section id="education" class="content-section">
-            <h2 class="section-title" data-aos="fade-up"><i class="fas fa-graduation-cap"></i> Học vấn</h2>
-            <ul class="education-list">
-                <li data-aos="fade-left">
-                    <i class="fas fa-school icon"></i>
-                    <div>
-                        <strong>Trường THPT Trưng Vương, Quy Nhơn</strong>
-                        <span>2021</span>
-                    </div>
-                </li>
-                <li data-aos="fade-left" data-aos-delay="100">
-                    <i class="fas fa-university icon"></i>
-                    <div>
-                        <strong>Trường Đại học Quy Nhơn</strong>
-                        <span>2025</span>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section id="timeline" class="content-section">
-            <h2 class="section-title" data-aos="fade-right"><i class="fas fa-history"></i> Dấu Mốc</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-date">2025 - 2026</div>
-                    <div class="timeline-content">
-                        <h3><i class="fas fa-briefcase"></i> Developer tại Thế Giới Xanh</h3>
-                        <p>Phát triển ứng dụng với .NET, xây dựng giao diện bằng Razor Pages trong môi trường doanh nghiệp, Viết API, rèn luyện kỹ năng làm việc nhóm</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h3><i class="fas fa-graduation-cap"></i> Tốt nghiệp Đại học</h3>
-                        <p>Tốt nghiệp CNTT chuyên ngành công nghệ phần mềm tại Đại học Quy Nhơn.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3><i class="fas fa-briefcase"></i> Thực tập tại NCC Soft</h3>
-                        <p>Phát triển ứng dụng web với công nghệ hiện đại, làm việc trong môi trường chuyên nghiệp.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3><i class="fas fa-certificate"></i> Chứng chỉ PTE 29</h3>
-                        <p>Đạt chứng chỉ năng lực tiếng Anh quốc tế, mở rộng cơ hội giao tiếp toàn cầu.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-date">2021</div>
-                    <div class="timeline-content">
-                        <h3><i class="fas fa-university"></i> Bắt đầu Đại học</h3>
-                        <p>Khởi đầu hành trình với ngành CNTT tại Đại học Quy Nhơn.</p>
-                    </div>
-                </div>
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+            <div class="skills-list">
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+              >
+                <i class="devicon-react-original colored"></i> React Native
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="150"
+              >
+                <i class="devicon-flutter-plain colored"></i> Flutter
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+              >
+                <i class="devicon-android-plain colored"></i> Android
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="devicon-apple-original"></i> iOS
+              </span>
             </div>
-        </section>
+          </div>
 
-        <section id="contact" class="content-section">
-            <h2 class="section-title" data-aos="fade-right"><i class="fas fa-paper-plane"></i> Kết Nối</h2>
-            <p class="contact-intro" data-aos="fade-up"><i class="fas fa-hand-point-right"></i> Liên Hệ Mình Nhé</p>
-            <ul class="contact-list" data-aos="fade-up" data-aos-delay="200">
-                <li><a href="https://facebook.com/mtuan221" target="_blank" class="contact-link" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://instagram.com/mtuan221" target="_blank" class="contact-link" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://github.com/bean221" target="_blank" class="contact-link" data-tooltip="GitHub"><i class="fab fa-github"></i></a></li>
-                <li><a href="tel:+84905961293" class="contact-link" data-tooltip="Điện thoại"><i class="fas fa-phone"></i></a></li>
-                <li><a href="mailto:hoctot221@gmail.com" class="contact-link" data-tooltip="Email"><i class="far fa-envelope"></i></a></li>
-                <li><a href="https://zalo.me/0905961293" target="_blank" class="contact-link" data-tooltip="Zalo"><i class="fas fa-comment-dots"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/l%C3%AA-minh-tu%E1%BA%A5n-743919363/" target="_blank" class="contact-link" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-            </ul>
-            <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Địa Chỉ</h3>
-                    <p>Quy Nhơn, Gia Lai, Việt Nam</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Thời Gian</h3>
-                    <p>Làm việc: 8:00 - 17:00</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-language"></i>
-                    <h3>Ngôn Ngữ</h3>
-                    <p>Tiếng Việt, Tiếng Anh</p>
-                </div>
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-database"></i> Databases</h3>
+            <div class="skills-list">
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+              >
+                <i class="devicon-mysql-plain colored"></i> MySQL
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="150"
+              >
+                <i class="devicon-postgresql-plain colored"></i> PostgreSQL
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+              >
+                <i class="devicon-mongodb-plain colored"></i> MongoDB
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="devicon-redis-plain colored"></i> Redis
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="devicon-microsoftsqlserver-plain colored"></i> SQL
+                Server
+              </span>
             </div>
-        </section>
+          </div>
+
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+            <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+            <div class="skills-list">
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+              >
+                <i class="devicon-git-plain colored"></i> Git
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="150"
+              >
+                <i class="devicon-github-original"></i> GitHub
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+              >
+                <i class="devicon-docker-plain colored"></i> Docker
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="devicon-visualstudio-plain colored"></i> VS Code
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="300"
+              >
+                <i class="devicon-jira-plain colored"></i> Jira
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="350"
+              >
+                <i class="fas fa-users"></i> Huly
+              </span>
+            </div>
+          </div>
+
+          <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+            <h3><i class="fas fa-users"></i> Kỹ Năng Mềm</h3>
+            <div class="skills-list">
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+              >
+                <i class="fas fa-comments"></i> Giao Tiếp
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="150"
+              >
+                <i class="fas fa-users-cog"></i> Làm Việc Nhóm
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+              >
+                <i class="fas fa-tasks"></i> Quản Lý Thời Gian
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="250"
+              >
+                <i class="fas fa-lightbulb"></i> Giải Quyết Vấn Đề
+              </span>
+              <span
+                class="skill-tag"
+                data-aos="zoom-in-up"
+                data-aos-delay="350"
+              >
+                <i class="fas fa-book-reader"></i> Tự Học
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="content-section">
+        <h2 class="section-title" data-aos="fade-up">
+          <i class="fas fa-graduation-cap"></i> Học vấn
+        </h2>
+        <ul class="education-list">
+          <li data-aos="fade-left">
+            <i class="fas fa-school icon"></i>
+            <div>
+              <strong>Trường THPT Trưng Vương, Quy Nhơn</strong>
+              <span>2021</span>
+            </div>
+          </li>
+          <li data-aos="fade-left" data-aos-delay="100">
+            <i class="fas fa-university icon"></i>
+            <div>
+              <strong>Trường Đại học Quy Nhơn</strong>
+              <span>2025</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="timeline" class="content-section">
+        <h2 class="section-title" data-aos="fade-right">
+          <i class="fas fa-history"></i> Dấu Mốc
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-date">2025 - 2026</div>
+            <div class="timeline-content">
+              <h3>
+                <i class="fas fa-briefcase"></i> Developer tại Thế Giới Xanh
+              </h3>
+              <p>
+                Phát triển ứng dụng với .NET, xây dựng giao diện bằng Razor
+                Pages trong môi trường doanh nghiệp, Viết API, rèn luyện kỹ năng
+                làm việc nhóm
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-graduation-cap"></i> Tốt nghiệp Đại học</h3>
+              <p>
+                Tốt nghiệp CNTT chuyên ngành công nghệ phần mềm tại Đại học Quy
+                Nhơn.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-date">2024</div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-briefcase"></i> Thực tập tại NCC Soft</h3>
+              <p>
+                Phát triển ứng dụng web với công nghệ hiện đại, làm việc trong
+                môi trường chuyên nghiệp.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-date">2024</div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-certificate"></i> Chứng chỉ PTE 29</h3>
+              <p>
+                Đạt chứng chỉ năng lực tiếng Anh quốc tế, mở rộng cơ hội giao
+                tiếp toàn cầu.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-content">
+              <h3><i class="fas fa-university"></i> Bắt đầu Đại học</h3>
+              <p>Khởi đầu hành trình với ngành CNTT tại Đại học Quy Nhơn.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section">
+        <h2 class="section-title" data-aos="fade-right">
+          <i class="fas fa-paper-plane"></i> Kết Nối
+        </h2>
+        <p class="contact-intro" data-aos="fade-up">
+          <i class="fas fa-hand-point-right"></i> Liên Hệ Mình Nhé
+        </p>
+        <ul class="contact-list" data-aos="fade-up" data-aos-delay="200">
+          <li>
+            <a
+              href="https://facebook.com/mtuan221"
+              target="_blank"
+              class="contact-link"
+              data-tooltip="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/mtuan221"
+              target="_blank"
+              class="contact-link"
+              data-tooltip="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/bean221"
+              target="_blank"
+              class="contact-link"
+              data-tooltip="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="tel:+84905961293"
+              class="contact-link"
+              data-tooltip="Điện thoại"
+              ><i class="fas fa-phone"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="mailto:hoctot221@gmail.com"
+              class="contact-link"
+              data-tooltip="Email"
+              ><i class="far fa-envelope"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://zalo.me/0905961293"
+              target="_blank"
+              class="contact-link"
+              data-tooltip="Zalo"
+              ><i class="fas fa-comment-dots"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/l%C3%AA-minh-tu%E1%BA%A5n-743919363/"
+              target="_blank"
+              class="contact-link"
+              data-tooltip="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
+        </ul>
+        <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Địa Chỉ</h3>
+            <p>Quy Nhơn, Gia Lai, Việt Nam</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <h3>Thời Gian</h3>
+            <p>Làm việc: 8:00 - 17:00</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-language"></i>
+            <h3>Ngôn Ngữ</h3>
+            <p>Tiếng Việt, Tiếng Anh</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>© <span id="current-year"></span> Lê Minh Tuấn | Feel <i class="fas fa-heart pulse"></i> và <i class="fas fa-coffee"></i> tại Quy Nhơn</p>
-        <p>Email: hoctot221@gmail.com | Zalo/SĐT: 0905 961 293</p>
+      <p>
+        © <span id="current-year"></span> Lê Minh Tuấn | Feel
+        <i class="fas fa-heart pulse"></i> và <i class="fas fa-coffee"></i> tại
+        Quy Nhơn
+      </p>
+      <p>Email: hoctot221@gmail.com | Zalo/SĐT: 0905 961 293</p>
     </footer>
-</body>
+  </body>
 </html>
